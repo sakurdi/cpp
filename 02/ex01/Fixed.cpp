@@ -1,5 +1,15 @@
 #include "Fixed.hpp"
 
+Fixed::Fixed(const int val)
+{
+	this->number = val << this->fractional_val;
+}
+
+Fixed::Fixed(const float val)
+{
+	this->number = roundf(val * (1 << this->fractional_val));
+}
+
 Fixed::Fixed() : number(0)
 {
 	std::cout << "Default constructor called" << std::endl;
