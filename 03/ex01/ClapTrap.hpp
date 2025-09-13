@@ -3,8 +3,11 @@
 
 #include <iostream>
 
+#define DEFAULT_E "default PNJ"
+
 class ClapTrap
 {
+protected:
 	std::string name;
 	int hit_points;
 	int energy_points;
@@ -12,11 +15,11 @@ class ClapTrap
 
 public:
 	ClapTrap();
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap(const ClapTrap &other);
 	ClapTrap(const std::string &name);
 	ClapTrap &operator=(const ClapTrap &obj);
-	void attack(const std::string &target);
+	virtual void attack(const std::string &target = DEFAULT_E);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	const std::string getName(void) const;

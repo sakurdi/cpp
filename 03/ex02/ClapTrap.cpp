@@ -33,7 +33,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 	return *this;
 }
 
-void ClapTrap::attack(const std::string &target = "Default")
+void ClapTrap::attack(const std::string &target)
 {
 	if(target == "Default")
 		std::cout << "ClapTrap " << this->name << " attacks default enemy, causing " << this->attack_damage << " points of damage!" << std::endl; 
