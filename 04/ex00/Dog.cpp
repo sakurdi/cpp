@@ -19,7 +19,7 @@ Dog &Dog::operator=(const Dog &obj)
 {
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &obj)
-		Dog::operator=(obj);
+		Animal::operator=(obj);
 	return *this;
 }
 

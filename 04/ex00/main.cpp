@@ -4,8 +4,8 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog("Dog");
-	const Animal* i = new Cat("Cat");
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 	
 
 	std::cout << "-------GOOD POLYMORPHISM DISPLAY-------" << std::endl;
@@ -24,7 +24,7 @@ int main()
 	std::cout << "-------BAD POLYMORPHISM DISPLAY-------" << std::endl;
 
 
-	delete meta, delete j, delete i;
-	delete wa, delete wc;
+	delete meta; delete j; delete i;
+	delete wa; delete wc;
 	return 0;
 }

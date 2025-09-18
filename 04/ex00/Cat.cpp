@@ -1,7 +1,5 @@
 #include "Cat.hpp"
 
-#include "Cat.hpp"
-
 Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat constructor called" << std::endl;
@@ -21,7 +19,7 @@ Cat &Cat::operator=(const Cat &obj)
 {
 	std::cout << "Cat assignment operator called" << std::endl;
 	if (this != &obj)
-		Cat::operator=(obj);
+		Animal::operator=(obj);
 	return *this;
 }
 
