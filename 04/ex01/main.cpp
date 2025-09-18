@@ -26,16 +26,20 @@ int main()
 
 	// delete meta, delete j, delete i;
 	// delete wa, delete wc;
-	Animal *animalArr = new Animal[10];
+	Animal **animalArr = new Animal*[10];
 	for(size_t i = 0; i < 10; i++)
 	{
-		if(i % 2 == 0)
-			animalArr[i] = Cat();
+		if(i == 0)
+			animalArr[i] = new Dog();
+		else if(i % 2 == 0)
+			animalArr[i] = new Cat();
 		else
-			animalArr[i] = Dog();
+			animalArr[i] = new Dog();
 	}
+	for(size_t i = 0; i < 10; i++)
+		delete animalArr[i];
+	delete[] animalArr;
 	// Brain *b = new Brain();
 	// delete(b);
-	delete[] animalArr;
 	return 0;
 }

@@ -2,8 +2,6 @@
 #define ANIMAL_HPP
 
 #include <iostream>
-#include <typeinfo>
-#include "Brain.hpp"
 
 class Animal
 {
