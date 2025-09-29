@@ -2,6 +2,14 @@
 
 int main()
 {
-	Bureaucrat b(55);
+
+	try
+	{
+		Bureaucrat b(0);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what();
+	}
 
 }
