@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name(default_name)
 {
@@ -17,6 +18,14 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 	return *this;
 }
 
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name), grade(grade)
+{
+	if(grade > 150)
+		throw GradeTooLowException();
+	if(grade < 1)
+		throw GradeTooHighException();
+	std::cout << "Bureaucrat name and grade constructor called" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(int grade) : name(default_name), grade(grade)
 {
@@ -67,4 +76,30 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat &b)
 {
 	os << b.getName() << ", bureaucrat grade " << b.getGrade();
 	return os;
+}
+
+void Bureaucrat::signForm(AForm &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " signed form " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << this->name << " could not execute form " << form.getName() << " [reason:  " << e.what() <<  "]" << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->name << " executed form " << form.getName() << std::endl;
+	}
+	catch (const std::exception &e)
+	{
+		std::cout << this->name << " could not execute form " << form.getName() << " [reason:  " << e.what() <<  "]" << std::endl;
+	}
 }

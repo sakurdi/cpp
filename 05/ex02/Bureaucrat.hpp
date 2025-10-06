@@ -7,6 +7,8 @@
 #define default_name "Wagie"
 
 
+class AForm;
+
 class Bureaucrat
 {
 private:
@@ -29,6 +31,7 @@ public:
 	};
 	Bureaucrat();
 	Bureaucrat(int grade);
+	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const std::string &name);
 	~Bureaucrat();
 	Bureaucrat(const Bureaucrat &obj);
@@ -37,6 +40,9 @@ public:
 	void decGrade();
 	short int getGrade() const;
 	const std::string &getName() const;
+	void signForm(AForm &form);
+	void executeForm(AForm const & form) const;
+
 };
 
 std::ostream& operator<<(std::ostream &os, Bureaucrat &b);
