@@ -1,4 +1,4 @@
-FILES = main.cpp templates.cpp
+FILES = main.cpp
 OBJ_FILES = $(FILES:.cpp=.o)
 CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 CXX_COMPILER = c++

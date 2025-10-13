@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 
-int	main(int ac, char **av)
+int	main()
 {
 	// if(ac == 3)
 	// {
@@ -21,9 +21,9 @@ int	main(int ac, char **av)
 	std::cout << "max( a, b ) = " << ::max(a, b) << std::endl;
 	std::string c = "chaine1";
 	std::string d = "chaine2";
-	templates::swap(c, d);
+	::swap(c, d);
 	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << templates::min(c, d) << std::endl;
-	std::cout << "max( c, d ) = " << templates::max(c, d) << std::endl;
+	std::cout << "min( c, d ) = " << ::min(c, d) << std::endl;
+	std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
 	return (0);
 }
