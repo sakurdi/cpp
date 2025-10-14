@@ -8,6 +8,7 @@
 #include <limits>
 #include <cstdlib>
 #include <cmath>
+#include <cerrno>
 
 class ScalarConverter
 {
@@ -22,7 +23,10 @@ private:
 	static bool isInt(const std::string &input);
 	static bool isDouble(const std::string &input);
 	static bool isFloat(const std::string &input);
-	static void print(double dFloat, double dInt, double dChar, double dDouble, const std::string &input);
+	static void printChar(double value, const std::string &input, bool overflow);
+	static void printInt(double value, const std::string &input, bool overflow);
+	static void printFloat(double value, const std::string &input, bool overflow);
+	static void printDouble(double value, const std::string &input, bool overflow);
 public:
 	static void convert(const std::string &input);
 };
